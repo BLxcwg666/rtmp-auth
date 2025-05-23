@@ -1,8 +1,23 @@
 {
+	"name": "rtmp-auth",
+	"version": "1.0.0",
+	"description": "Simple Auth Server for RTMP Services",
+	"main": "dist/index.js",
+	"bin": "dist/index.js",
+	"scripts": {
+		"start": "node app.js",
+		"build:ncc": "ncc build app.js -o dist",
+		"build:pkg": "pkg ./dist/index.js --targets \"node18-linux,node18-win\"",
+		"build": "pnpm run build:ncc && pnpm run build:pkg"
+	},
+	"author": "BLxcwg666",
+	"license": "AGPL-v3-or-later",
 	"dependencies": {
+		"@vercel/ncc": "^0.38.3",
 		"chalk": "4.1.0",
 		"dotenv": "^16.5.0",
 		"express": "^5.1.0",
-		"moment-timezone": "^0.5.48"
+		"moment-timezone": "^0.5.48",
+		"pkg": "^5.8.1"
 	}
 }
