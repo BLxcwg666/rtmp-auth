@@ -26,6 +26,7 @@ router.get('/', (req, res) => {
       log.info(`App: ${appName}, Key: ${streamKey}, IP: ${addr}`, "AUTH");
       return res.status(200).json({ success: true, msg: "Authorization successful" });
     } else {
+      log.warn(`IP: ${addr} Authorization ${appName} failed`, "AUTH");
       return res.status(403).json({ success: false, msg: "Invalid Stream Key" });
     }
 });
