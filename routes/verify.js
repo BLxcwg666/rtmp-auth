@@ -9,6 +9,8 @@ const validKeys = new Set([
     'test789',
 ]);
 
+// 这他妈只是个示例，不要狗叫我为什么硬编码了，你不会自己改吗
+
 const validApps = new Set([
     'live',
     'rtmp',
