@@ -16,9 +16,10 @@ const validApps = new Set([
 ]);
 
 router.post('/', (req, res) => {
-    const { app: appName, name: streamKey, addr } = req.query;
+    const { app: appName, name: streamKey, addr } = req.body;
     
     if (!validApps.has(appName)) {
+      log.info(`Invalid APP: ${appName} from ${addr}`, "AUTH");
       return res.status(403).json({ success: false, msg: "Invalid APP" });
     }
   
