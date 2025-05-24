@@ -15,7 +15,7 @@ const validApps = new Set([
     'myapp',
 ]);
 
-router.get('/', (req, res) => {
+router.post('/', (req, res) => {
     const { app: appName, name: streamKey, addr } = req.query;
     
     if (!validApps.has(appName)) {
